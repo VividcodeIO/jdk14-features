@@ -33,6 +33,15 @@ public class SwitchExpressions {
     System.out.println(output);
   }
 
+  void switchWithEnum(Color color) {
+    String output = switch (color) {
+      case RED -> "R";
+      case BLUE -> "B";
+      case GREEN -> "G";
+    };
+    System.out.println(output);
+  }
+
   public static void main(String[] args) {
     SwitchExpressions switchExpressions = new SwitchExpressions();
     switchExpressions.printDays(0);
@@ -45,5 +54,10 @@ public class SwitchExpressions {
     switchExpressions.printDays3(1);
     switchExpressions.printDays3(3);
     switchExpressions.printDays3(15);
+    switchExpressions.switchWithEnum(Color.BLUE);
+  }
+
+  public enum Color {
+    RED, GREEN, BLUE
   }
 }
